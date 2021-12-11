@@ -10,10 +10,26 @@ function QuestionPage() {
     const [value, setValue] = useState([0, 80, 90, 100])
     const [question, setQuestion] = useState('')
     const [answer, setAnswer] = useState('')
+    const [payload, setPayLoad] = useState({})
 
     const handleChangeQuestion = (value) => setQuestion(value)
     const handleChangeAnswer = (value) => setAnswer(value)
-    const handleSubmit = () => console.log({question, answer})
+    const handleSubmit = () => {
+        let baseUrl = 'https://6d33-35-233-165-19.ngrok.io'
+        // console.log({ question, answer, value })
+        payload.answer = answer
+        payload.question = question
+        payload.weight1 = value[1]
+        payload.weight2 = value[2] - value[1]
+        payload.weight3 = value[3] - value[2]
+        fetch(`${baseUrl}/assess/?question=${payload.question}&answer=${payload.answer}&criteria_weight_1=${payload.weight1}&criteria_weight_2=${payload.weight2}&criteria_weight_3=${payload.weight3}`)
+            .then(res => res.json())
+            .then(data => localStorage.setItem('result', JSON.stringify(data)))
+            .then(() => {
+                window.location.reload()
+                window.location.href = 'http://localhost:3000/#navigate__here'
+            })
+    }
 
     return (
         <div className="container">
