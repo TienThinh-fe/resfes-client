@@ -1,6 +1,7 @@
 import { COLORS } from 'constants/color'
 import PropTypes from 'prop-types'
 import ScoreSlider from 'components/ScoreSlider'
+import { round10 } from 'utils'
 
 
 const fontStyles = { fontStyle: 'normal', fontSize: 16, color: 'black' }
@@ -37,26 +38,6 @@ function ResultCriteriaCard(props) {
             }}>{round10(score, -1)}</p>
         </div>)
 }
-
-function decimalAdjust(type, value, exp) {
-    if (typeof exp === 'undefined' || +exp === 0) {
-        return Math[type](value)
-    }
-    value = +value
-    exp = +exp
-
-    if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)) {
-        return NaN
-    }
-    
-    value = value.toString().split('e')
-    value = Math[type](+(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp)))
-   
-    value = value.toString().split('e')
-    return +(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp))
-}
-
-const round10 = (value, exp) => decimalAdjust('round', value, exp)
 
 ResultCriteriaCard.propTypes = {
     weights: PropTypes.string.isRequired,

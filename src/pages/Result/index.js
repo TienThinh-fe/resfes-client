@@ -3,6 +3,7 @@ import ResultCriteriaCard from 'components/ResultCriteriaCard'
 import SubTitle from 'components/SubTitle'
 import { COLORS } from 'constants/color'
 import { STRINGS_EN } from 'constants/string'
+import { round10 } from 'utils'
 import './styles.css'
 
 function ResultPage() {
@@ -23,7 +24,7 @@ function ResultPage() {
                     </div>
                     <div className="result__detail--score">
                         <SubTitle title={STRINGS_EN.SCORE} color={COLORS.DARK_GREY} />
-                        <div className="content" style={{ fontSize: '20px' }}>{assessResult?.total_score}</div>
+                        <div className="content" style={{ fontSize: '20px' }}>{round10(assessResult?.total_score, -1)}</div>
                         <div className="result__card">
                             <ResultCriteriaCard title={STRINGS_EN.CRITERIA_1} weights={assessResult?.criteria_weight_1} score={assessResult?.criteria_1_score} color={COLORS.BLUE} />
                             <ResultCriteriaCard title={STRINGS_EN.CRITERIA_2} weights={assessResult?.criteria_weight_2} score={assessResult?.criteria_2_score} color={COLORS.GREEN} />
