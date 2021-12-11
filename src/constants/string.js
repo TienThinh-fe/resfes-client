@@ -4,7 +4,7 @@ export const STRINGS_EN = {
     CRITERIA_WEIGHTS: 'Criteria weights',
     ANSWER: 'Answer',
     SUBMIT: 'Submit',
-    RESULT: 'Result',
+    RESULT: 'Student Assessment Result',
     SCORE: 'Score',
     CRITERIA_1: 'Valid sentence',
     CRITERIA_2: 'Correct information',
