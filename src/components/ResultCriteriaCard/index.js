@@ -1,6 +1,7 @@
 import { COLORS } from 'constants/color'
 import PropTypes from 'prop-types'
-import ScoreSlider from '../ScoreSclider'
+import ScoreSlider from 'components/ScoreSlider'
+
 
 const fontStyles = { fontStyle: 'normal', fontSize: 16, color: 'black'}
 
@@ -38,7 +39,7 @@ function ResultCriteriaCard(props) {
 }
 
 ResultCriteriaCard.propTypes = {
-    weights: PropTypes.number.isRequired,
+    weights: PropTypes.string.isRequired,
     score: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
