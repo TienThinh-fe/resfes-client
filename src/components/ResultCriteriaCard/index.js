@@ -1,14 +1,14 @@
+import { COLORS } from 'constants/color'
 import PropTypes from 'prop-types'
 import ScoreSlider from '../ScoreSclider'
 
-const fontStyles = { fontFamily: 'Poppins', fontStyle: 'normal', fontSize: 16, color: 'black'}
+const fontStyles = { fontStyle: 'normal', fontSize: 16, color: 'black'}
 
 function ResultCriteriaCard(props) {
     const { weights, score, color, title } = props
     return (
         <div style={{
-            background: '#F3F3F3',
-            borderRadius: 8,
+            background: COLORS.LIGHT_GREY,
             paddingLeft: 24,
             paddingRight: 24,
             display: 'flex',
@@ -19,12 +19,12 @@ function ResultCriteriaCard(props) {
                 flex: .6,
                 ...fontStyles
             }}
-            >{title} ({weights}%)</span>
+            >{title} <span style={{ fontSize: 12, color: COLORS.DARK_GREY }}>({weights}%)</span></span>
             <div style={{ flex: .3 }}>
                 <ScoreSlider
                     width={196}
                     height={6}
-                    score={8}
+                    score={score}
                     color={color}
                 />
             </div>
@@ -38,7 +38,7 @@ function ResultCriteriaCard(props) {
 }
 
 ResultCriteriaCard.propTypes = {
-    weights: PropTypes.string.isRequired,
+    weights: PropTypes.number.isRequired,
     score: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,

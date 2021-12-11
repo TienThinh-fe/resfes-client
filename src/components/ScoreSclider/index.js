@@ -4,7 +4,7 @@ function ScoreSlider(props) {
     const { width, height, score, color, style } = props
 
     return (
-        <div style={{ width, height, backgroundColor: 'white', borderRadius: 8, ...style }}>
+        <div style={{ width, height, backgroundColor: 'white', ...style }}>
             <div style={{ width: (score * width) / 10, height, backgroundColor: color, borderRadius: 8 }} />
         </div>
     )
