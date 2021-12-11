@@ -15,7 +15,7 @@ function QuestionPage() {
     const handleChangeQuestion = (value) => setQuestion(value)
     const handleChangeAnswer = (value) => setAnswer(value)
     const handleSubmit = () => {
-        let baseUrl = 'https://f16b-35-233-165-19.ngrok.io'
+        let baseUrl = 'https://7998-34-141-148-233.ngrok.io'
         // console.log({ question, answer, value })
         payload.answer = answer
         payload.question = question
