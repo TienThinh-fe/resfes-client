@@ -15,7 +15,7 @@ function QuestionPage() {
     const handleChangeQuestion = (value) => setQuestion(value)
     const handleChangeAnswer = (value) => setAnswer(value)
     const handleSubmit = () => {
-        let baseUrl = 'https://6d33-35-233-165-19.ngrok.io'
+        let baseUrl = 'https://ace9-35-233-165-19.ngrok.io'
         // console.log({ question, answer, value })
         payload.answer = answer
         payload.question = question
@@ -27,7 +27,7 @@ function QuestionPage() {
             .then(data => localStorage.setItem('result', JSON.stringify(data)))
             .then(() => {
                 window.location.reload()
-                window.location.href = 'http://localhost:3000/#navigate__here'
+                window.location.href = 'https://the-pioneer.vercel.app/#navigate__here'
             })
     }
 
