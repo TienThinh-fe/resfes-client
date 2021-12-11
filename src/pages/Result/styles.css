@@ -1,0 +1,37 @@
+.container .result {
+  margin-top: 200px;
+}
+
+.container .result .result__title {
+  text-align: center;
+}
+
+.container .result .result__detail {
+  display: flex;
+  min-width: 1000px;
+}
+
+.container .result .result__detail .result__detail--answer {
+  width: 497px;
+  flex: 5;
+  margin-right: 32px;
+}
+
+.container .result .result__detail .result__detail--answer .content {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.container .result .result__detail .result__detail--score .content {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.container .result .result__detail .result__detail--score {
+  width: 497px;
+  flex: 5;
+}
+
+.container .result .result__detail .result__detail--score .result__card {
+  margin: 48px 0px;
+}
