@@ -15,4 +15,8 @@ function ScoreSlider(props) {
     color: PropTypes.string.isRequired
 }
 
+ScoreSlider.defaultProps = {
+    score: 0,
+}
+
 export default ScoreSlider
